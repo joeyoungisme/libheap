@@ -13,6 +13,9 @@ int heapify(void *base, size_t num, size_t ele_size,
             int (*cmp_fun)(const void *, const void*),
             void (*swap_fun)(void *, void *, int))
 {
+    if(!base)
+        return -1;
+
     for(int index = num/2; index > 0; index -= 1)
     {
         int bigchild;
@@ -40,6 +43,9 @@ int heapsorting(void *base, size_t num, size_t ele_size,
                 int (*cmp_fun)(const void *, const void *),
                 void (*swap_fun)(void *, void *, int))
 {
+    if(!base)
+        return -1;
+
     heapify(base, num, ele_size, cmp_fun, swap_fun);
 
 
